@@ -1,0 +1,392 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: gray;
+}
+
+#container {
+  background-color: gray;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 200px auto;
+}
+#container #dashBoard {
+  grid-row-start: span 3;
+  background: #171345;
+}
+#container #dashBoard #navigationWrap, #container #dashBoard #Image-wrapper {
+  position: fixed;
+  top: 0;
+  box-sizing: border-box;
+}
+#container #dashBoard #Image-wrapper {
+  height: 50px;
+}
+#container #dashBoard #navigationWrap {
+  margin-top: 140px;
+  display: grid;
+}
+#container #dashBoard #navigationWrap #settings {
+  display: grid;
+  margin-top: 50px;
+}
+
+.flexnav {
+  color: white;
+  display: inline-flex;
+  margin-left: 13%;
+  margin-top: 20px;
+  align-items: center;
+  font-size: 120%;
+}
+@media (max-width: 810px) {
+  .flexnav {
+    font-size: 100%;
+  }
+}
+.flexnav:hover {
+  margin-left: 10%;
+  color: yellow;
+  transform: scale(1.2);
+}
+.flexnav a {
+  padding-left: 10%;
+}
+.flexnav a:hover {
+  cursor: pointer;
+}
+
+#Top-Bar {
+  display: flex;
+  background-color: rgba(230, 230, 8, 0.767);
+  box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
+}
+#Top-Bar #searchbar {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+#Top-Bar #searchfield {
+  background-color: black;
+  width: 40vw;
+  border-radius: 525px;
+  height: 5vh;
+  color: white;
+  transition: transform 0.2s;
+}
+#Top-Bar #searchfield:focus {
+  border-color: #171345;
+}
+#Top-Bar #left {
+  width: 60%;
+  margin-top: 10px;
+  padding: 10px;
+}
+#Top-Bar #left #profile {
+  margin-top: 4%;
+  display: flex;
+  align-items: center;
+}
+#Top-Bar #left #profile #image {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+#Top-Bar #left #profile #states, #Top-Bar #left #profile #name {
+  margin-left: 20px;
+}
+#Top-Bar #right {
+  width: 40%;
+  margin-right: 0;
+}
+#Top-Bar #right #right-profile {
+  display: flex;
+  font-size: 20px;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: end;
+  margin-left: 10px;
+}
+#Top-Bar #right #right-profile .sP {
+  margin-right: 25px;
+}
+#Top-Bar #right #image2 {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+#Top-Bar #right #navbar2 #dropdown span {
+  display: none;
+}
+#Top-Bar #right #navbar2 #dropdown .dropdown-content {
+  display: flex;
+  margin-top: 5vh;
+}
+#Top-Bar #right #navbar2 #dropdown .dropdown-content .nav2-link {
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s;
+  padding: 10px;
+}
+#Top-Bar #right #navbar2 #dropdown .dropdown-content .nav2-link:hover {
+  color: yellow;
+}
+#Top-Bar #right #navbar2 #dropdown .dropdown-content .nav2 {
+  margin-right: 20px;
+  vertical-align: middle;
+  line-height: 40px;
+  border-radius: 40px;
+  text-align: center;
+  background-color: black;
+  width: 9vw;
+  height: 40px;
+  transition: transform 0.2s;
+}
+#Top-Bar #right #navbar2 #dropdown .dropdown-content .nav2:hover {
+  transform: scale(1.5);
+}
+
+#main {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.39);
+  grid-row: 2/span 2;
+  grid-column: 2/span 2;
+  width: 80vw;
+}
+#main #ProjTitle {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+#main #main-leftside {
+  width: 70%;
+}
+#main #Projects {
+  margin-left: 10px;
+  width: 100%;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 45% 45%;
+  grid-template-rows: repeat(3, 300px);
+}
+#main .ProjCard {
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  background-color: white;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+  border-left: 15px solid rgba(230, 230, 8, 0.767);
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+#main .ProjCard .tools i {
+  margin-right: 20px;
+  font-size: 30px;
+}
+#main .ProjCard .tools i:hover {
+  color: yellow;
+  cursor: pointer;
+}
+#main .ProjCard .tools i:last-child {
+  margin-right: 0px;
+}
+#main .ProjCard .Title {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 70px;
+}
+#main .ProjCard .tools {
+  font-size: 20px;
+  padding: 15%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+#main #announce {
+  width: 30%;
+}
+@media screen and (max-width: 900px) and (min-width: 700px) {
+  #main #announce {
+    width: 40%;
+  }
+}
+#main #announce #titleofann {
+  margin-top: 30px;
+}
+#main #announce .right-card {
+  background-color: white;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  padding: 45px;
+  height: auto;
+  font-size: 100%;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+#main #announce .right-card .Ano1 {
+  border-bottom: 2px solid black;
+}
+
+#trendingPart {
+  margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+  #container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    grid-template-rows: 10% auto;
+  }
+  #dashBoard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 15vw;
+  }
+  #dashBoard .nav-link {
+    display: none;
+  }
+  #dashBoard #Image-wrapper {
+    max-width: 15vw;
+  }
+  #dashBoard #Image-wrapper img {
+    width: 15vw;
+  }
+  #Top-Bar {
+    margin: 0;
+    max-height: 10vh;
+    max-width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #Top-Bar #left {
+    margin: 0;
+  }
+  #Top-Bar #left #profile {
+    display: none;
+  }
+  #Top-Bar #left #searchbar {
+    height: 50px;
+    margin-top: 0px;
+    width: 40vw;
+  }
+  #Top-Bar #right {
+    display: inline-flex;
+    margin: 0;
+  }
+  #Top-Bar #right #navbar2 {
+    margin: 0;
+  }
+  #Top-Bar #right #navbar2 #dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  #Top-Bar #right #navbar2 #dropdown span {
+    display: contents;
+  }
+  #Top-Bar #right #navbar2 #dropdown span #new-item {
+    background-color: black;
+    width: 50px;
+    height: 100%;
+    color: white;
+    font-size: 20px;
+    margin-left: 5px;
+    text-align: center;
+    padding: 4px;
+    border-radius: 15px;
+  }
+  #Top-Bar #right #navbar2 #dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  #Top-Bar #right #navbar2 #dropdown:hover .dropdown-content {
+    display: block;
+    color: red;
+    cursor: pointer;
+  }
+  #Top-Bar #right #navbar2 #dropdown:hover .dropdown-content .nav2-link {
+    background-color: white;
+    color: black;
+  }
+  #Top-Bar #right #navbar2 #dropdown:hover .dropdown-content .nav2-link:hover {
+    transform: scale(1);
+  }
+  #Top-Bar #right #navbar2 .nav2:hover {
+    transform: scale(1);
+  }
+  #Top-Bar #right #right-profile {
+    margin: 0;
+  }
+  #Top-Bar #right #right-profile .sP {
+    margin: 0;
+  }
+  #Top-Bar #right #right-profile #image2, #Top-Bar #right #right-profile #name2 {
+    display: none;
+  }
+  #main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #main #main-leftside {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  #main #main-leftside #ProjTitle {
+    margin: 0;
+  }
+  #main #main-leftside #Projects {
+    width: 90%;
+    margin-left: 10px;
+    display: block;
+  }
+  #main #announce {
+    display: none;
+  }
+}
+@media screen and (max-width: 920px) and (min-width: 700px) {
+  #main #Projects {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 80%;
+    grid-template-rows: repeat(6, 300px);
+  }
+  #main #main-leftside {
+    width: 60%;
+  }
+}/*# sourceMappingURL=style.css.map */
